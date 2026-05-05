@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { TrendingUp, Home, BarChart3, Wallet, LogOut, User } from 'lucide-react'
+import { TrendingUp, Home, BarChart3, Wallet, LogOut, User, Activity, Sun } from 'lucide-react'
 import './Navbar.css'
 
 function Navbar({ user, onLogout }) {
@@ -12,8 +12,13 @@ function Navbar({ user, onLogout }) {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/dashboard" className="navbar-brand">
-          <TrendingUp size={24} />
-          <span>TradeHub</span>
+          <div className="brand-icon">
+            <TrendingUp size={18} />
+          </div>
+          <div className="brand-text">
+            <span>TradeHub</span>
+            <small>Live market cockpit</small>
+          </div>
         </Link>
 
         <div className="navbar-links">
@@ -41,6 +46,13 @@ function Navbar({ user, onLogout }) {
         </div>
 
         <div className="navbar-user">
+          <button className="icon-btn" aria-label="theme">
+            <Sun size={16} />
+          </button>
+          <div className="realtime-pill">
+            <Activity size={14} />
+            <span>Realtime</span>
+          </div>
           <div className="user-info">
             <User size={18} />
             <span>{user?.name}</span>

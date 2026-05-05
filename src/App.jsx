@@ -7,6 +7,7 @@ import Market from './components/Market'
 import Portfolio from './components/Portfolio'
 import Trading from './components/Trading'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 import { userAPI } from './utils/api'
 import { connectSocket, disconnectSocket } from './utils/socket'
 import './App.css'
@@ -49,50 +50,53 @@ function App() {
     <Router>
       <div className="app">
         {isAuthenticated && <Navbar user={user} onLogout={handleLogout} />}
-        <Routes>
-          <Route 
-            path="/login" 
-            element={
-              isAuthenticated ? <Navigate to="/dashboard" /> : <Login onLogin={handleLogin} />
-            } 
-          />
-          <Route 
-            path="/register" 
-            element={
-              isAuthenticated ? <Navigate to="/dashboard" /> : <Register onLogin={handleLogin} />
-            } 
-          />
-          <Route 
-            path="/dashboard" 
-            element={
-              isAuthenticated ? <Dashboard user={user} /> : <Navigate to="/login" />
-            } 
-          />
-          <Route 
-            path="/market" 
-            element={
-              isAuthenticated ? <Market /> : <Navigate to="/login" />
-            } 
-          />
-          <Route 
-            path="/portfolio" 
-            element={
-              isAuthenticated ? <Portfolio /> : <Navigate to="/login" />
-            } 
-          />
-          <Route 
-            path="/trade/:symbol" 
-            element={
-              isAuthenticated ? <Trading /> : <Navigate to="/login" />
-            } 
-          />
-          <Route 
-            path="/" 
-            element={
-              isAuthenticated ? <Navigate to="/dashboard" /> : <Navigate to="/login" />
-            } 
-          />
-        </Routes>
+        <main className="app-content">
+          <Routes>
+            <Route 
+              path="/login" 
+              element={
+                isAuthenticated ? <Navigate to="/dashboard" /> : <Login onLogin={handleLogin} />
+              } 
+            />
+            <Route 
+              path="/register" 
+              element={
+                isAuthenticated ? <Navigate to="/dashboard" /> : <Register onLogin={handleLogin} />
+              } 
+            />
+            <Route 
+              path="/dashboard" 
+              element={
+                isAuthenticated ? <Dashboard user={user} /> : <Navigate to="/login" />
+              } 
+            />
+            <Route 
+              path="/market" 
+              element={
+                isAuthenticated ? <Market /> : <Navigate to="/login" />
+              } 
+            />
+            <Route 
+              path="/portfolio" 
+              element={
+                isAuthenticated ? <Portfolio /> : <Navigate to="/login" />
+              } 
+            />
+            <Route 
+              path="/trade/:symbol" 
+              element={
+                isAuthenticated ? <Trading /> : <Navigate to="/login" />
+              } 
+            />
+            <Route 
+              path="/" 
+              element={
+                isAuthenticated ? <Navigate to="/dashboard" /> : <Navigate to="/login" />
+              } 
+            />
+          </Routes>
+        </main>
+        {isAuthenticated && <Footer />}
       </div>
     </Router>
   )

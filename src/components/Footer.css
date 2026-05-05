@@ -1,0 +1,205 @@
+.app-footer {
+  margin-top: auto;
+  padding: 28px 32px 36px;
+}
+
+.app-footer-shell {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 28px 30px 20px;
+  background:
+    radial-gradient(circle at top left, rgba(61, 217, 184, 0.12), transparent 26%),
+    radial-gradient(circle at top right, rgba(107, 184, 255, 0.1), transparent 22%),
+    linear-gradient(180deg, rgba(16, 26, 43, 0.96), rgba(10, 18, 32, 0.98));
+  border: 1px solid rgba(148, 170, 197, 0.12);
+  border-radius: 28px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(18px);
+  overflow: hidden;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(220px, 0.8fr) minmax(280px, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.footer-brand-block,
+.footer-nav-block,
+.footer-cta {
+  padding: 10px 0;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-brand-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(61, 217, 184, 0.22), rgba(107, 184, 255, 0.18));
+  color: var(--primary);
+  border: 1px solid rgba(61, 217, 184, 0.14);
+}
+
+.footer-brand span {
+  display: block;
+  color: var(--text-primary);
+  font-family: 'Space Grotesk', 'Manrope', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.footer-brand small {
+  color: var(--text-secondary);
+  font-size: 0.86rem;
+}
+
+.footer-tagline,
+.footer-cta p {
+  margin-top: 16px;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.footer-label {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(61, 217, 184, 0.1);
+  color: var(--primary);
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.footer-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(148, 170, 197, 0.12);
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition: transform 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.footer-links a:hover {
+  transform: translateY(-1px);
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.footer-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 184, 106, 0.12);
+  color: var(--accent);
+  border: 1px solid rgba(255, 184, 106, 0.16);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.footer-divider {
+  height: 1px;
+  margin: 18px 0 16px;
+  background: linear-gradient(90deg, transparent 0%, rgba(61, 217, 184, 0.45) 16%, rgba(107, 184, 255, 0.4) 50%, rgba(61, 217, 184, 0.45) 84%, transparent 100%);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-credit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  color: var(--text-secondary);
+  text-align: center;
+  font-size: 0.98rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.credit-icon {
+  vertical-align: middle;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.credit-icon.love {
+  color: #ff6b81;
+  animation: pulseLove 2.4s ease-in-out infinite;
+}
+
+.credit-icon.coffee {
+  color: #f5b971;
+  animation: floatCoffee 3s ease-in-out infinite;
+}
+
+.app-footer-shell:hover .credit-icon {
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.2));
+}
+
+@keyframes pulseLove {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes floatCoffee {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-footer {
+    padding: 22px 16px 28px;
+  }
+
+  .app-footer-shell {
+    padding: 22px 20px 18px;
+    border-radius: 24px;
+  }
+
+  .footer-credit {
+    font-size: 0.92rem;
+  }
+}

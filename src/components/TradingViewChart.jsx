@@ -3,11 +3,20 @@ import { createChart, ColorType } from 'lightweight-charts';
 import { stocksAPI } from '../utils/api';
 import './TradingViewChart.css';
 
+const timeframeOptions = [
+  { key: '1m', label: '1m', apiInterval: '1m', range: '1d' },
+  { key: '5m', label: '5m', apiInterval: '5m', range: '5d' },
+  { key: '10m', label: '10m', apiInterval: '10m', range: '5d' },
+  { key: '1h', label: '1h', apiInterval: '1h', range: '1mo' },
+  { key: '1d', label: '1d', apiInterval: '1d', range: '1y' }
+];
+
 function TradingViewChart({ symbol }) {
   const chartContainerRef = useRef();
   const chart = useRef();
   const candlestickSeries = useRef();
   const [loading, setLoading] = useState(true);
+  const [activeTimeframe, setActiveTimeframe] = useState('1d');
 
   useEffect(() => {
     if (!chartContainerRef.current) return;
@@ -40,7 +49,7 @@ function TradingViewChart({ symbol }) {
     });
 
     // Load historical data
-    loadChartData();
+    loadChartData(activeTimeframe);
 
     // Handle resize
     const handleResize = () => {
@@ -61,10 +70,11 @@ function TradingViewChart({ symbol }) {
     };
   }, [symbol]);
 
-  const loadChartData = async () => {
+  const loadChartData = async (timeframeKey) => {
     try {
       setLoading(true);
-      const response = await stocksAPI.getHistory(symbol, '1d', '1mo');
+      const selectedTimeframe = timeframeOptions.find((option) => option.key === timeframeKey) || timeframeOptions[4];
+      const response = await stocksAPI.getHistory(symbol, selectedTimeframe.apiInterval, selectedTimeframe.range);
       const data = response.data.map(item => ({
         time: item.time / 1000, // Convert to seconds
         open: item.open,
@@ -75,25 +85,60 @@ function TradingViewChart({ symbol }) {
 
       if (candlestickSeries.current) {
         candlestickSeries.current.setData(data);
+        chart.current.timeScale().fitContent();
       }
       setLoading(false);
     } catch (error) {
-      console.error('Error loading chart data:', error);
-      setLoading(false);
+      try {
+        const fallbackResponse = await stocksAPI.getHistory(symbol, '1d', '1mo');
+        const fallbackData = fallbackResponse.data.map(item => ({
+          time: item.time / 1000,
+          open: item.open,
+          high: item.high,
+          low: item.low,
+          close: item.close,
+        }));
+
+        if (candlestickSeries.current) {
+          candlestickSeries.current.setData(fallbackData);
+          chart.current.timeScale().fitContent();
+        }
+      } catch (fallbackError) {
+        console.error('Error loading chart data:', fallbackError);
+      } finally {
+        setLoading(false);
+      }
     }
   };
+
+  useEffect(() => {
+    if (candlestickSeries.current) {
+      loadChartData(activeTimeframe);
+    }
+  }, [activeTimeframe, symbol]);
 
   // Update chart with real-time data
   useEffect(() => {
     const interval = setInterval(() => {
-      loadChartData();
+      loadChartData(activeTimeframe);
     }, 5000); // Update every 5 seconds
 
     return () => clearInterval(interval);
-  }, [symbol]);
+  }, [symbol, activeTimeframe]);
 
   return (
     <div className="tradingview-chart-container">
+      <div className="chart-timeframe-controls">
+        {timeframeOptions.map((option) => (
+          <button
+            key={option.key}
+            className={`timeframe-btn ${activeTimeframe === option.key ? 'active' : ''}`}
+            onClick={() => setActiveTimeframe(option.key)}
+          >
+            {option.label}
+          </button>
+        ))}
+      </div>
       {loading && <div className="chart-loading">Loading chart data...</div>}
       <div ref={chartContainerRef} className="chart-wrapper" />
     </div>

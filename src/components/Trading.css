@@ -1,7 +1,7 @@
 .trading {
   min-height: calc(100vh - 70px);
   padding: 32px;
-  background: var(--background);
+  background: transparent;
 }
 
 .trading-container {
@@ -16,14 +16,14 @@
   background: transparent;
   color: var(--text-secondary);
   padding: 8px 16px;
-  border-radius: 8px;
+  border-radius: 6px;
   margin-bottom: 24px;
   transition: all 0.2s;
   font-size: 14px;
 }
 
 .back-button:hover {
-  background: var(--surface);
+  background: rgba(16, 26, 43, 0.92);
   color: var(--text-primary);
 }
 
@@ -33,9 +33,10 @@
   align-items: flex-start;
   margin-bottom: 32px;
   padding: 24px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 16px;
+  background: rgba(16, 26, 43, 0.92);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
 }
 
 .trading-header h1 {
@@ -54,7 +55,7 @@
 }
 
 .current-price {
-  font-size: 32px;
+  font-size: clamp(26px, 4vw, 34px);
   font-weight: 700;
   margin-bottom: 8px;
 }
@@ -78,14 +79,14 @@
 
 .trading-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: minmax(0, 2fr) minmax(320px, 1fr);
   gap: 24px;
 }
 
 .chart-section {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 16px;
+  background: rgba(16, 26, 43, 0.92);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
   padding: 24px;
 }
 
@@ -105,15 +106,15 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 16px;
+  background: rgba(16, 26, 43, 0.92);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
   padding: 8px;
 }
 
 .order-type-btn {
   padding: 12px;
-  border-radius: 8px;
+  border-radius: 6px;
   font-size: 16px;
   font-weight: 600;
   background: transparent;
@@ -132,9 +133,9 @@
 }
 
 .order-form {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 16px;
+  background: rgba(16, 26, 43, 0.92);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -154,9 +155,9 @@
 }
 
 .form-group input {
-  background: var(--surface-light);
-  border: 1px solid var(--border);
-  border-radius: 8px;
+  background: var(--surface-muted);
+  border: 1px solid var(--border-soft);
+  border-radius: 6px;
   padding: 12px 16px;
   color: var(--text-primary);
   font-size: 16px;
@@ -165,13 +166,13 @@
 
 .form-group input:focus {
   border-color: var(--primary);
-  background: var(--surface);
+  background: rgba(8, 17, 31, 0.86);
 }
 
 .order-summary {
   padding: 16px;
-  background: var(--surface-light);
-  border-radius: 8px;
+  background: var(--surface-muted);
+  border-radius: var(--radius);
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -191,7 +192,7 @@
 
 .message {
   padding: 12px;
-  border-radius: 8px;
+  border-radius: var(--radius);
   font-size: 14px;
   text-align: center;
 }
@@ -210,15 +211,15 @@
 
 .submit-order {
   padding: 14px;
-  border-radius: 8px;
+  border-radius: 6px;
   font-size: 16px;
   font-weight: 600;
   transition: all 0.2s;
 }
 
 .submit-order.buy {
-  background: linear-gradient(135deg, var(--success) 0%, var(--primary-dark) 100%);
-  color: white;
+  background: var(--success);
+  color: #06131c;
 }
 
 .submit-order.sell {
@@ -232,9 +233,9 @@
 }
 
 .stock-info-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 16px;
+  background: rgba(16, 26, 43, 0.92);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
   padding: 24px;
 }
 
@@ -248,7 +249,7 @@
   display: flex;
   justify-content: space-between;
   padding: 12px 0;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border-soft);
   font-size: 14px;
 }
 

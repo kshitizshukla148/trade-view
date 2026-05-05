@@ -1,0 +1,35 @@
+
+> trading-platform@1.0.0 dev
+> vite --host 127.0.0.1 --port 5174
+
+
+  [32m[1mVITE[22m v5.4.21[39m  [2mready in [0m[1m564[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://127.0.0.1:[1m5174[22m/[39m
+[2m7:34:30 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Dashboard.jsx[22m
+[2m7:35:25 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Dashboard.jsx[22m
+[2m7:36:05 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Dashboard.css[22m
+[2m7:36:50 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Dashboard.css, /src/App.jsx[22m
+[2m7:39:12 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.jsx[22m
+[2m7:43:07 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Dashboard.jsx[22m
+[2m7:44:10 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Dashboard.jsx[22m
+[2m7:44:34 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Dashboard.css[22m
+[2m7:48:02 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Footer.jsx[22m
+[2m7:48:04 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Footer.jsx[22m
+[2m7:48:19 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Footer.jsx[22m
+[2m7:50:00 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Dashboard.css[22m
+[2m7:50:11 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Footer.jsx[22m
+[2m7:50:28 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Footer.jsx[22m
+[2m7:50:40 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Footer.css[22m
+[2m7:51:18 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Footer.css[22m
+[2m7:53:17 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Dashboard.css[22m
+[2m7:54:36 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Dashboard.jsx[22m
+[2m7:55:01 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Dashboard.css[22m
+[2m7:57:33 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Dashboard.css[22m
+[2m7:59:44 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Dashboard.jsx[22m
+[2m8:00:03 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Dashboard.css[22m
+[2m8:03:54 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Dashboard.css[22m
+[2m8:04:39 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Dashboard.css[22m
+[2m8:16:40 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Dashboard.css[22m
+[2m8:16:42 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Dashboard.css[22m
+[2m8:17:21 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Dashboard.css[22m

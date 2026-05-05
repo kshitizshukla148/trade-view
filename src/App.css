@@ -1,5 +1,11 @@
 .app {
   min-height: 100vh;
-  background: var(--background);
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-content {
+  flex: 1;
 }
 

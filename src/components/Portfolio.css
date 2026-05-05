@@ -1,7 +1,7 @@
 .portfolio {
   min-height: calc(100vh - 70px);
   padding: 32px;
-  background: var(--background);
+  background: transparent;
 }
 
 .portfolio-container {
@@ -14,7 +14,7 @@
 }
 
 .portfolio-header h1 {
-  font-size: 32px;
+  font-size: clamp(26px, 4vw, 34px);
   font-weight: 700;
   margin-bottom: 8px;
 }
@@ -30,9 +30,9 @@
   align-items: center;
   justify-content: center;
   min-height: 400px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 16px;
+  background: rgba(16, 26, 43, 0.92);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
   color: var(--text-secondary);
 }
 
@@ -52,10 +52,10 @@
 }
 
 .cta-button {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-  color: white;
+  background: var(--primary);
+  color: #06131c;
   padding: 12px 24px;
-  border-radius: 8px;
+  border-radius: 6px;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.2s;
@@ -69,23 +69,24 @@
 .portfolio-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 24px;
+  gap: 18px;
   margin-bottom: 32px;
 }
 
 .stat-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 16px;
+  background: rgba(16, 26, 43, 0.92);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
   padding: 24px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
 }
 
 .stat-card.positive {
-  border-color: var(--success);
+  border-color: rgba(0, 212, 170, 0.32);
 }
 
 .stat-card.negative {
-  border-color: var(--danger);
+  border-color: rgba(255, 92, 119, 0.34);
 }
 
 .stat-label {
@@ -95,9 +96,10 @@
 }
 
 .stat-amount {
-  font-size: 28px;
+  font-size: clamp(24px, 3vw, 28px);
   font-weight: 700;
   margin-bottom: 4px;
+  overflow-wrap: anywhere;
 }
 
 .stat-percent {
@@ -116,9 +118,9 @@
 }
 
 .portfolio-chart {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 16px;
+  background: rgba(16, 26, 43, 0.92);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
   padding: 24px;
   margin-bottom: 32px;
 }
@@ -130,9 +132,9 @@
 }
 
 .holdings-section {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 16px;
+  background: rgba(16, 26, 43, 0.92);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
   padding: 24px;
 }
 
@@ -151,7 +153,7 @@
   grid-template-columns: 100px 1fr 100px 120px 120px 120px 150px 100px;
   gap: 16px;
   padding: 16px 0;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border-soft);
   font-weight: 600;
   font-size: 14px;
   color: var(--text-secondary);
@@ -167,12 +169,12 @@
   grid-template-columns: 100px 1fr 100px 120px 120px 120px 150px 100px;
   gap: 16px;
   padding: 20px 0;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border-soft);
   align-items: center;
 }
 
 .table-row:hover {
-  background: var(--surface-light);
+  background: rgba(24, 37, 58, 0.72);
   margin: 0 -24px;
   padding-left: 24px;
   padding-right: 24px;
@@ -214,10 +216,11 @@
 }
 
 .trade-btn {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-  color: white;
+  background: rgba(0, 212, 170, 0.14);
+  border: 1px solid rgba(0, 212, 170, 0.25);
+  color: var(--primary);
   padding: 8px 16px;
-  border-radius: 8px;
+  border-radius: 6px;
   text-decoration: none;
   font-size: 14px;
   font-weight: 600;
@@ -228,7 +231,9 @@
 
 .trade-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 212, 170, 0.3);
+  background: var(--primary);
+  color: #06131c;
+  box-shadow: 0 8px 18px rgba(0, 212, 170, 0.18);
 }
 
 @media (max-width: 1200px) {

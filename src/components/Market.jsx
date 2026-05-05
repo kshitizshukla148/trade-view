@@ -110,7 +110,7 @@ function Market() {
                     <TrendingDown size={16} />
                   )}
                   <span>
-                    ₹{stock.change >= 0 ? '+' : ''}${stock.change.toFixed(2)} 
+                    {stock.change >= 0 ? '+' : ''}₹{stock.change.toFixed(2)} 
                     ({stock.changePercent >= 0 ? '+' : ''}{stock.changePercent.toFixed(2)}%)
                   </span>
                 </div>
